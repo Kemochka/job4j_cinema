@@ -36,6 +36,7 @@
                 <tbody>
                 <tr th:each="filmSession: ${filmSessions}">
                     <td th:text="${filmSession.id}"></td>
+                    <td><a th:text="${filmSession.film}" th:href="@{/ticket/buy/{id}(id=${filmSession.id})}"></a></td>
                     <td th:text="${filmSession.hall}"></td>
                     <td th:text="${#temporals.format(filmSession.start, 'dd.MM.yyyy HH:mm')}"></td>
                     <td th:text="${#temporals.format(filmSession.end, 'dd.MM.yyyy HH:mm')}"></td>

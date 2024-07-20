@@ -39,6 +39,8 @@ public class SessionDto {
     public SessionDto(FilmSession session, Film film, Hall hall) {
         this.film = film.getName();
         this.hall = hall.getName();
+        this.row = hall.getRow();
+        this.place = hall.getPlace();
         this.start = session.getStart();
         this.end = session.getEnd();
         this.price = session.getPrice();
