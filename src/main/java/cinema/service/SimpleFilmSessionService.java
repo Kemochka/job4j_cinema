@@ -61,6 +61,7 @@ public class SimpleFilmSessionService implements FilmSessionService {
             Film film = filmOptional.get();
             Hall hall = hallOptional.get();
             SessionDto sessionDto = new SessionDto(session, film, hall);
+            sessionDto.setId(session.getId());
             sessions.add(sessionDto);
         }
         return sessions;
