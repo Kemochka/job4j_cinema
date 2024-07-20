@@ -23,11 +23,11 @@ public class Sql2oTicketRepository implements TicketRepository {
                     values(:sessionId, :row, :place, :userId)
                     """;
             var query = connection.createQuery(sql, true)
-                    .addParameter("session_id", ticket.getSessionId())
-                    .addParameter("row_number", ticket.getRow())
-                    .addParameter("place_number", ticket.getPlace())
-                    .addParameter("user_id", ticket.getUserId());
-            int generatedId = query.setColumnMappings(Ticket.COLUMN_MAPPING).executeUpdate().getKey(Integer.class);
+                    .addParameter("sessionId", ticket.getSessionId())
+                    .addParameter("row", ticket.getRow())
+                    .addParameter("place", ticket.getPlace())
+                    .addParameter("userId", ticket.getUserId());
+            int generatedId = query.executeUpdate().getKey(Integer.class);
             ticket.setId(generatedId);
             return Optional.of(ticket);
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class Sql2oTicketRepository implements TicketRepository {
                     .addParameter("row_number", ticket.getRow())
                     .addParameter("place_number", ticket.getPlace())
                     .addParameter("user_id", ticket.getUserId());
-            var affectedRows = query.setColumnMappings(Ticket.COLUMN_MAPPING).executeUpdate().getResult();
+            var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
     }
