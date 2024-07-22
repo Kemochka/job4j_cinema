@@ -25,8 +25,8 @@ public class Sql2oHallRepository implements HallRepository {
                     """;
             var query = connection.createQuery(sql, true)
                     .addParameter("name", hall.getName())
-                    .addParameter("row_count", hall.getRow())
-                    .addParameter("place_count", hall.getPlace())
+                    .addParameter("row", hall.getRow())
+                    .addParameter("place", hall.getPlace())
                     .addParameter("description", hall.getDescription());
             int generatedId = query.executeUpdate().getKey(Integer.class);
             hall.setId(generatedId);
@@ -42,15 +42,15 @@ public class Sql2oHallRepository implements HallRepository {
         try (var connection = sql2o.open()) {
             var sql = """
                     update halls
-                    set name = :name, row_count = :row_count, place_count = :place_count, description = :description
+                    set name = :name, row_count = :row, place_count = :place, description = :description
                     where id = :id
                     """;
             var query = connection.createQuery(sql)
                     .addParameter("name", hall.getName())
-                    .addParameter("row_count", hall.getRow())
-                    .addParameter("place_count", hall.getPlace())
+                    .addParameter("row", hall.getRow())
+                    .addParameter("place", hall.getPlace())
                     .addParameter("description", hall.getDescription());
-            var affectedRows = query.setColumnMappings(FilmSession.COLUMN_MAPPING).executeUpdate().getResult();
+            var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
     }

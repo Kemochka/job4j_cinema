@@ -26,10 +26,10 @@ public class Sql2oFilmRepository implements FilmRepository {
                     .addParameter("name", film.getName())
                     .addParameter("description", film.getDescription())
                     .addParameter("year", film.getYear())
-                    .addParameter("genre_id", film.getYear())
-                    .addParameter("minimal_age", film.getAge())
-                    .addParameter("duration_in_minutes", film.getDuration())
-                    .addParameter("file_id", film.getFileId());
+                    .addParameter("genreId", film.getYear())
+                    .addParameter("age", film.getAge())
+                    .addParameter("duration", film.getDuration())
+                    .addParameter("fileId", film.getFileId());
             int generatedId = query.executeUpdate().getKey(Integer.class);
             film.setId(generatedId);
             return Optional.of(film);
@@ -57,11 +57,11 @@ public class Sql2oFilmRepository implements FilmRepository {
                     .addParameter("name", film.getName())
                     .addParameter("description", film.getDescription())
                     .addParameter("year", film.getYear())
-                    .addParameter("genre_id", film.getYear())
-                    .addParameter("minimal_age", film.getAge())
-                    .addParameter("duration_in_minutes", film.getDuration())
-                    .addParameter("file_id", film.getFileId());
-            var affectedRows = query.setColumnMappings(Film.COLUMN_MAPPING).executeUpdate().getResult();
+                    .addParameter("genreId", film.getYear())
+                    .addParameter("age", film.getAge())
+                    .addParameter("duration", film.getDuration())
+                    .addParameter("fileId", film.getFileId());
+            var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
     }

@@ -23,12 +23,12 @@ public class Sql2oFilmSessionRepository implements FilmSessionRepository {
                     values(:filmId, :hallsId, :start, :end, :price)
                     """;
             var query = connection.createQuery(sql, true)
-                    .addParameter("film_id", session.getFilmId())
-                    .addParameter("halls_id", session.getHallId())
-                    .addParameter("start_time", session.getStart())
-                    .addParameter("end_time", session.getEnd())
+                    .addParameter("filmId", session.getFilmId())
+                    .addParameter("hallsId", session.getHallId())
+                    .addParameter("start", session.getStart())
+                    .addParameter("end", session.getEnd())
                     .addParameter("price", session.getPrice());
-            int generatedId = query.setColumnMappings(FilmSession.COLUMN_MAPPING).executeUpdate().getKey(Integer.class);
+            int generatedId = query.executeUpdate().getKey(Integer.class);
             session.setId(generatedId);
             return Optional.of(session);
         } catch (Exception e) {
@@ -47,12 +47,12 @@ public class Sql2oFilmSessionRepository implements FilmSessionRepository {
                     where id = :id
                     """;
             var query = connection.createQuery(sql)
-                    .addParameter("film_id", session.getFilmId())
-                    .addParameter("halls_id", session.getHallId())
-                    .addParameter("start_time", session.getStart())
-                    .addParameter("end_time", session.getEnd())
+                    .addParameter("filmId", session.getFilmId())
+                    .addParameter("hallId", session.getHallId())
+                    .addParameter("start", session.getStart())
+                    .addParameter("end", session.getEnd())
                     .addParameter("price", session.getPrice());
-            var affectedRows = query.setColumnMappings(FilmSession.COLUMN_MAPPING).executeUpdate().getResult();
+            var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
     }
