@@ -38,7 +38,7 @@ public class TicketController {
     }
 
     @PostMapping("/buy")
-    public String byeTicket(@ModelAttribute Ticket ticket, Model model) {
+    public String buyTicket(@ModelAttribute Ticket ticket, Model model) {
         Optional<Ticket> savedTicket = ticketService.save(ticket);
         if (savedTicket.isEmpty()) {
             return "ticket/error";

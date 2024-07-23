@@ -58,7 +58,7 @@ public class Sql2oUserRepository implements UserRepository {
                     "delete from users where email = :email"
             );
             query.addParameter("email", email);
-            var affectedRows = query.setColumnMappings(User.COLUMN_MAPPING).executeUpdate().getResult();
+            var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
     }

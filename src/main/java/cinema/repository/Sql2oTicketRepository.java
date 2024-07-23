@@ -41,14 +41,14 @@ public class Sql2oTicketRepository implements TicketRepository {
         try (var connection = sql2o.open()) {
             var sql = """
                     update tickets
-                    set session_id = :session_id, row_number = :row, place_number = :place, user_id = :user_id
+                    set session_id = :sessionId, row_number = :row, place_number = :place, user_id = :userId
                     where id = :id
                     """;
             var query = connection.createQuery(sql)
-                    .addParameter("session_id", ticket.getSessionId())
-                    .addParameter("row_number", ticket.getRow())
-                    .addParameter("place_number", ticket.getPlace())
-                    .addParameter("user_id", ticket.getUserId());
+                    .addParameter("sessionId", ticket.getSessionId())
+                    .addParameter("row", ticket.getRow())
+                    .addParameter("place", ticket.getPlace())
+                    .addParameter("userId", ticket.getUserId());
             var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
