@@ -8,7 +8,7 @@ public class Film {
             "id", "id",
             "name", "name",
             "description", "description",
-            "year", "year",
+            "\"year\"", "year",
             "genre_id", "genreId",
             "minimal_age", "age",
             "duration_in_minutes", "duration",
@@ -17,7 +17,7 @@ public class Film {
     private int id;
     private String name;
     private String description;
-    private String year;
+    private int year;
     private int genreId;
     private int age;
     private int duration;
@@ -26,7 +26,7 @@ public class Film {
     public Film() {
     }
 
-    public Film(int id, String name, String description, String year, int genreId, int age, int duration, int fileId) {
+    public Film(int id, String name, String description, int year, int genreId, int age, int duration, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,11 +61,11 @@ public class Film {
         this.description = description;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 

@@ -49,7 +49,8 @@ public class Sql2oHallRepository implements HallRepository {
                     .addParameter("name", hall.getName())
                     .addParameter("row", hall.getRow())
                     .addParameter("place", hall.getPlace())
-                    .addParameter("description", hall.getDescription());
+                    .addParameter("description", hall.getDescription())
+                    .addParameter("id", hall.getId());
             var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }

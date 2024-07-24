@@ -8,13 +8,13 @@ public class FilmDto {
     private int id;
     private String name;
     private String description;
-    private String year;
+    private int year;
     private int minimalAge;
     private int durationInMinutes;
     private int fileId;
     private String genre;
 
-    public FilmDto(int id, String name, String description, String year, int minimalAge, int durationInMinutes, int fileId, String genre) {
+    public FilmDto(int id, String name, String description, int year, int minimalAge, int durationInMinutes, int fileId, String genre) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -78,11 +78,11 @@ public class FilmDto {
         this.description = description;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
