@@ -42,8 +42,8 @@ public class Sql2oFilmSessionRepository implements FilmSessionRepository {
         try (var connection = sql2o.open()) {
             var sql = """
                     update film_sessions
-                    SET film_id = :film_id, halls_id = :halls_id, start_time = :start_time,
-                    end_time = :end_time, price = :price
+                    SET film_id = :filmId, halls_id = :hallId, start_time = :start,
+                    end_time = :end, price = :price
                     where id = :id
                     """;
             var query = connection.createQuery(sql)
@@ -51,7 +51,8 @@ public class Sql2oFilmSessionRepository implements FilmSessionRepository {
                     .addParameter("hallId", session.getHallId())
                     .addParameter("start", session.getStart())
                     .addParameter("end", session.getEnd())
-                    .addParameter("price", session.getPrice());
+                    .addParameter("price", session.getPrice())
+                    .addParameter("id", session.getId());
             var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }

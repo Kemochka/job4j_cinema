@@ -48,7 +48,8 @@ public class Sql2oTicketRepository implements TicketRepository {
                     .addParameter("sessionId", ticket.getSessionId())
                     .addParameter("row", ticket.getRow())
                     .addParameter("place", ticket.getPlace())
-                    .addParameter("userId", ticket.getUserId());
+                    .addParameter("userId", ticket.getUserId())
+                    .addParameter("id", ticket.getId());
             var affectedRows = query.executeUpdate().getResult();
             return affectedRows > 0;
         }
