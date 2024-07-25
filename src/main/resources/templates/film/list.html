@@ -26,7 +26,6 @@
                     <th scope="col">Продолжительность</th>
                 </tr>
                 </thead>
-                <tbody>
                 <tr th:each="film: ${films}">
                     <td th:text="${film.id}"></td>
                     <td><img th:src="@{/files/{fileId}(fileId=${film.fileId})}" class="w-100" alt="No image"></td>
@@ -37,10 +36,10 @@
                     <td th:text="${film.minimalAge}"></td>
                     <td th:text="${film.durationInMinutes}"></td>
                 </tr>
-                </tbody>
             </table>
         </div>
     </div>
+    <footer th:insert="blocks/footer :: footer"></footer>
 </div>
 </body>
 </html>
