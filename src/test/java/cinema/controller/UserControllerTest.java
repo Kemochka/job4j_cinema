@@ -1,7 +1,7 @@
 package cinema.controller;
 
 import cinema.model.User;
-import cinema.service.UserService;
+import cinema.service.user.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

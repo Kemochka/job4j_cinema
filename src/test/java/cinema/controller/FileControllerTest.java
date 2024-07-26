@@ -1,7 +1,7 @@
 package cinema.controller;
 
 import cinema.dto.FileDto;
-import cinema.service.FileService;
+import cinema.service.file.FileService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;

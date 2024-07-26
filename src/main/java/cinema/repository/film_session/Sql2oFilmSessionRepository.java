@@ -1,4 +1,4 @@
-package cinema.repository;
+package cinema.repository.film_session;
 
 import cinema.model.FilmSession;
 import org.springframework.stereotype.Repository;

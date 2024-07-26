@@ -1,7 +1,6 @@
-package cinema.repository;
+package cinema.repository.hall;
 
 import cinema.model.Hall;
-import cinema.model.FilmSession;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 

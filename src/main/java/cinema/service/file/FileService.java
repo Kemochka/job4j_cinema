@@ -1,4 +1,4 @@
-package cinema.service;
+package cinema.service.file;
 
 import cinema.dto.FileDto;
 import cinema.model.File;

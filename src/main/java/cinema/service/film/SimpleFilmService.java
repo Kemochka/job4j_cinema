@@ -1,10 +1,10 @@
-package cinema.service;
+package cinema.service.film;
 
 import cinema.dto.FilmDto;
 import cinema.model.Film;
 import cinema.model.Genre;
-import cinema.repository.FilmRepository;
-import cinema.repository.GenreRepository;
+import cinema.repository.film.FilmRepository;
+import cinema.repository.genre.GenreRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

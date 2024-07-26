@@ -1,7 +1,7 @@
 package cinema.controller;
 
 import cinema.model.User;
-import cinema.service.UserService;
+import cinema.service.user.UserService;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

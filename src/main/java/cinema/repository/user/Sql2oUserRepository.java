@@ -1,4 +1,4 @@
-package cinema.repository;
+package cinema.repository.user;
 
 import cinema.model.User;
 import org.springframework.stereotype.Repository;

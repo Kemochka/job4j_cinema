@@ -1,6 +1,6 @@
 package cinema.controller;
 
-import cinema.service.FilmSessionService;
+import cinema.service.film_session.FilmSessionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.ui.ConcurrentModel;

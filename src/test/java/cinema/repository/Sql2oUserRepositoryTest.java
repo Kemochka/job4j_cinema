@@ -2,6 +2,7 @@ package cinema.repository;
 
 import cinema.configuration.DatasourceConfiguration;
 import cinema.model.User;
+import cinema.repository.user.Sql2oUserRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

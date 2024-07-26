@@ -1,4 +1,4 @@
-package cinema.repository;
+package cinema.repository.film;
 
 import cinema.model.Film;
 

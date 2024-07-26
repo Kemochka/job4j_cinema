@@ -1,7 +1,7 @@
-package cinema.service;
+package cinema.service.user;
 
 import cinema.model.User;
-import cinema.repository.UserRepository;
+import cinema.repository.user.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

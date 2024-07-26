@@ -1,6 +1,6 @@
 package cinema.controller;
 
-import cinema.service.FileService;
+import cinema.service.file.FileService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

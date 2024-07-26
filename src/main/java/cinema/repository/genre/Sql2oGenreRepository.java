@@ -1,4 +1,4 @@
-package cinema.repository;
+package cinema.repository.genre;
 
 import cinema.model.Genre;
 import org.springframework.stereotype.Repository;

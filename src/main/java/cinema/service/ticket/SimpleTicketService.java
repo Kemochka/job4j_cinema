@@ -1,7 +1,8 @@
-package cinema.service;
+package cinema.service.ticket;
 
 import cinema.model.Ticket;
-import cinema.repository.TicketRepository;
+import cinema.repository.ticket.TicketRepository;
+import cinema.service.file.FileService;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

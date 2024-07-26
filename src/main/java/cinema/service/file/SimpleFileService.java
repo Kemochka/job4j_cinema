@@ -1,8 +1,8 @@
-package cinema.service;
+package cinema.service.file;
 
 import cinema.dto.FileDto;
 import cinema.model.File;
-import cinema.repository.FileRepository;
+import cinema.repository.file.FileRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,11 @@
-package cinema.service;
+package cinema.repository.ticket;
 
 import cinema.model.Ticket;
 
 import java.util.Collection;
 import java.util.Optional;
 
-public interface TicketService {
+public interface TicketRepository {
     Optional<Ticket> save(Ticket ticket);
 
     boolean update(Ticket ticket);

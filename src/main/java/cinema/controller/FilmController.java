@@ -1,6 +1,6 @@
 package cinema.controller;
 
-import cinema.service.FilmService;
+import cinema.service.film.FilmService;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package cinema.repository;
+package cinema.repository.ticket;
 
 import cinema.model.Ticket;
 import org.springframework.stereotype.Repository;

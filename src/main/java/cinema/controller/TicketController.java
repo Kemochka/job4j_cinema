@@ -1,8 +1,8 @@
 package cinema.controller;
 
 import cinema.model.Ticket;
-import cinema.service.FilmSessionService;
-import cinema.service.TicketService;
+import cinema.service.film_session.FilmSessionService;
+import cinema.service.ticket.TicketService;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
