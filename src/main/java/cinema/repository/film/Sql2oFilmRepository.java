@@ -1,6 +1,7 @@
 package cinema.repository.film;
 
 import cinema.model.Film;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Repository
 public class Sql2oFilmRepository implements FilmRepository {
     private final Sql2o sql2o;
+    private static final Logger LOGGER = Logger.getLogger(Sql2oFilmRepository.class);
 
     public Sql2oFilmRepository(Sql2o sql2o) {
         this.sql2o = sql2o;
@@ -34,7 +36,7 @@ public class Sql2oFilmRepository implements FilmRepository {
             film.setId(generatedId);
             return Optional.of(film);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Ошибка сохранения фильма", e);
         }
         return Optional.empty();
     }

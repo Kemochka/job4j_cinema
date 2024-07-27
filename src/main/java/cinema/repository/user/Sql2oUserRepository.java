@@ -1,6 +1,7 @@
 package cinema.repository.user;
 
 import cinema.model.User;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Repository
 public class Sql2oUserRepository implements UserRepository {
     private final Sql2o sql2o;
+    private static final Logger LOGGER = Logger.getLogger(Sql2oUserRepository.class);
 
     public Sql2oUserRepository(Sql2o sql2o) {
         this.sql2o = sql2o;
@@ -30,7 +32,7 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generatedId);
             return Optional.of(user);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Ошибка сохранения пользователя");
         }
         return Optional.empty();
     }
@@ -47,8 +49,9 @@ public class Sql2oUserRepository implements UserRepository {
             var user = query.setColumnMappings(User.COLUMN_MAPPING).executeAndFetchFirst(User.class);
             return Optional.ofNullable(user);
         } catch (Exception e) {
-            return Optional.empty();
+            LOGGER.error("Невозможно найти пользователя по почте и паролю", e);
         }
+        return Optional.empty();
     }
 
     @Override

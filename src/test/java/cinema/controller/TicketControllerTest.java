@@ -1,7 +1,7 @@
 package cinema.controller;
 
 import cinema.model.Ticket;
-import cinema.service.film_session.FilmSessionService;
+import cinema.service.filmsession.FilmSessionService;
 import cinema.service.ticket.TicketService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

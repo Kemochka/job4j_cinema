@@ -1,4 +1,4 @@
-package cinema.service.film_session;
+package cinema.service.filmsession;
 
 import cinema.dto.SessionDto;
 import cinema.model.Film;
@@ -6,7 +6,7 @@ import cinema.model.Hall;
 import cinema.model.FilmSession;
 import cinema.repository.film.FilmRepository;
 import cinema.repository.hall.HallRepository;
-import cinema.repository.film_session.FilmSessionRepository;
+import cinema.repository.filmsession.FilmSessionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

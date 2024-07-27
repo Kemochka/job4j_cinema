@@ -1,7 +1,7 @@
 package cinema.controller;
 
 import cinema.model.Ticket;
-import cinema.service.film_session.FilmSessionService;
+import cinema.service.filmsession.FilmSessionService;
 import cinema.service.ticket.TicketService;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Controller;
@@ -41,7 +41,10 @@ public class TicketController {
     public String buyTicket(@ModelAttribute Ticket ticket, Model model) {
         Optional<Ticket> savedTicket = ticketService.save(ticket);
         if (savedTicket.isEmpty()) {
-            return "ticket/error";
+            model.addAttribute("message",
+                    "Не удалось приобрести билет на заданное место. Вероятно оно уже занято. Перейдите на страницу\n"
+                            + "бронирования билетов и попробуйте снова.");
+            return "errors/404";
         }
         model.addAttribute("ticket", ticket);
         return "ticket/success";

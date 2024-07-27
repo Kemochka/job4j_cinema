@@ -1,6 +1,7 @@
 package cinema.repository.genre;
 
 import cinema.model.Genre;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Repository
 public class Sql2oGenreRepository implements GenreRepository {
     private final Sql2o sql2o;
+    private static final Logger LOGGER = Logger.getLogger(Sql2oGenreRepository.class);
 
     public Sql2oGenreRepository(Sql2o sql2o) {
         this.sql2o = sql2o;
@@ -27,7 +29,7 @@ public class Sql2oGenreRepository implements GenreRepository {
             genre.setId(generatedId);
             return Optional.of(genre);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Ошибка сохранения жанра", e);
         }
         return Optional.empty();
     }

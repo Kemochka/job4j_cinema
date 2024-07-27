@@ -52,8 +52,8 @@ public class UserController {
         Optional<User> savedUser = userService.save(user);
         if (savedUser.isEmpty()) {
             user.setName("Гость");
-            model.addAttribute("message", "Пользователь с такой почтой уже существует");
-            return "errors/404";
+            model.addAttribute("error", "Пользователь с такой почтой уже существует");
+            return "users/register";
         }
         return "index";
     }

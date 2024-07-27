@@ -3,7 +3,7 @@ package cinema.repository;
 import cinema.configuration.DatasourceConfiguration;
 import cinema.model.Genre;
 import cinema.repository.film.Sql2oFilmRepository;
-import cinema.repository.film_session.Sql2oFilmSessionRepository;
+import cinema.repository.filmsession.Sql2oFilmSessionRepository;
 import cinema.repository.genre.Sql2oGenreRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;

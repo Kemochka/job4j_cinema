@@ -1,4 +1,4 @@
-package cinema.service.film_session;
+package cinema.service.filmsession;
 
 import cinema.dto.SessionDto;
 import cinema.model.FilmSession;

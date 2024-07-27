@@ -1,6 +1,7 @@
 package cinema.repository.hall;
 
 import cinema.model.Hall;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Repository
 public class Sql2oHallRepository implements HallRepository {
     private final Sql2o sql2o;
+    private static final Logger LOGGER = Logger.getLogger(Sql2oHallRepository.class);
 
     public Sql2oHallRepository(Sql2o sql2o) {
         this.sql2o = sql2o;
@@ -31,7 +33,7 @@ public class Sql2oHallRepository implements HallRepository {
             hall.setId(generatedId);
             return Optional.of(hall);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Ошибка сохранения зала", e);
         }
         return Optional.empty();
     }

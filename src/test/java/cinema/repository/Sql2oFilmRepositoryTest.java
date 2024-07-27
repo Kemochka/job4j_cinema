@@ -6,7 +6,7 @@ import cinema.model.Film;
 import cinema.model.Genre;
 import cinema.repository.file.Sql2oFileRepository;
 import cinema.repository.film.Sql2oFilmRepository;
-import cinema.repository.film_session.Sql2oFilmSessionRepository;
+import cinema.repository.filmsession.Sql2oFilmSessionRepository;
 import cinema.repository.genre.Sql2oGenreRepository;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;

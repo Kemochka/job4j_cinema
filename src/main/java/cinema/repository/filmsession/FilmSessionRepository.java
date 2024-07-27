@@ -1,4 +1,4 @@
-package cinema.repository.film_session;
+package cinema.repository.filmsession;
 
 import cinema.model.FilmSession;
 

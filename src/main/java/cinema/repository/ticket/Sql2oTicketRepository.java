@@ -1,6 +1,7 @@
 package cinema.repository.ticket;
 
 import cinema.model.Ticket;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
 
@@ -10,6 +11,7 @@ import java.util.Optional;
 @Repository
 public class Sql2oTicketRepository implements TicketRepository {
     private final Sql2o sql2o;
+    private static final Logger LOGGER = Logger.getLogger(Sql2oTicketRepository.class);
 
     public Sql2oTicketRepository(Sql2o sql2o) {
         this.sql2o = sql2o;
@@ -31,7 +33,7 @@ public class Sql2oTicketRepository implements TicketRepository {
             ticket.setId(generatedId);
             return Optional.of(ticket);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("Ошибка сохранения билета", e);
         }
         return Optional.empty();
     }

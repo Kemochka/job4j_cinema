@@ -4,7 +4,7 @@ import cinema.configuration.DatasourceConfiguration;
 import cinema.model.*;
 import cinema.repository.file.Sql2oFileRepository;
 import cinema.repository.film.Sql2oFilmRepository;
-import cinema.repository.film_session.Sql2oFilmSessionRepository;
+import cinema.repository.filmsession.Sql2oFilmSessionRepository;
 import cinema.repository.genre.Sql2oGenreRepository;
 import cinema.repository.hall.Sql2oHallRepository;
 import org.junit.jupiter.api.AfterAll;
