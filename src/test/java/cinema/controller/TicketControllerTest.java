@@ -41,6 +41,6 @@ class TicketControllerTest {
         when(ticketService.save(any())).thenReturn(Optional.empty());
         var model = new ConcurrentModel();
         var view = ticketController.buyTicket(ticket, model);
-        assertThat(view).isEqualTo("ticket/error");
+        assertThat(view).isEqualTo("errors/404");
     }
 }
